@@ -1,15 +1,15 @@
 
 function hideShowCols(tabId) {
     'use  strict';
-    var tab, i, j, t, func = {}, cell, ri;
+    var tab, i, j, th, func = {}, cell, ri;
 
-    t = (window.event.target) ? window.event.target : window.event.srcElement;
-    if (t.tagName !== 'TH') {
+    th = (window.event.target) ? window.event.target : window.event.srcElement;
+    if (th.tagName !== 'TH') {
         return;
     }
     tab = document.getElementById(tabId);
-    ri = t.parentNode.rowIndex;
-    
+    ri = th.parentNode.rowIndex;
+
     function show(cell) {
         if (cell.hide) {
             cell.innerHTML = cell.innerHTML.slice(10, -3);
@@ -24,7 +24,7 @@ function hideShowCols(tabId) {
         }
     }
     ;
-    if (t.hide) {
+    if (th.hide) {
         func = show;
     } else {
         func = hide;
@@ -32,11 +32,12 @@ function hideShowCols(tabId) {
     for (i = 0; i < tab.rows.length; i++) {
         for (j = 0; j < tab.rows[i].cells.length; j++) {
             cell = tab.rows[i].cells[j];
-            if (cell.offsetLeft < t.offsetLeft || cell.offsetLeft > t.offsetLeft + t.clientWidth
-                    || (cell.colSpan > 1 && ri > i && cell.colSpan > t.colSpan)) {
-                continue;
+            if ((th.offsetLeft <= cell.offsetLeft && cell.offsetLeft <= th.offsetLeft + th.clientWidth)
+                    && (th.colSpan >= cell.colSpan)) {
+                func(cell);
+            } else if (cell.offsetLeft > th.offsetLeft + th.clientWidth) {
+                break;
             }
-            func(cell);
         }
     }
 }
