@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+        <script src="hide.js"></script>
+        <style>
+            table{ 
+                border-collapse:collapse;
+            }
+            th{
+                border:2px solid black;
+                background:silver;
+            }
+            td{
+                border:1px solid black;
+                background:lightgray;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="t1" onclick="hideShowCols(this.id)">
+            <thead>
+                <tr><th>0</th><th colspan=4 >Left side</th><th colspan=4 >right side</th></tr>
+                <tr><th>0</th>
+                    <th colspan="2" >Child 1 of left side </th>
+                    <th colspan="2" >Child 2 of left side </th>
+                    <th colspan="2" >Child 1 of right side </th>
+                    <th colspan="2" >Child 2 of right side </th>
+                </tr>
+                <tr><th>c0</th><th>c1</th><th>c2</th><th>c3</th><th>c4</th><th>c5</th><th  >c6</th><th>c7</th><th>c8</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>4</td><td>55555</td><td>6</td><td>7</td><td>8</td></tr>
+                <tr><td>0</td><td>1</td><td>2</td><td>3</td><td>444444444444444444444444444444</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+                <tr><td>0</td><td>1</td><td>2222</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td></tr>
+            </tbody>
+        </table>
+    </body>
+</html>
