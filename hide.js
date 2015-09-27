@@ -1,4 +1,3 @@
-
 function hideShowCols(tabId) {
     'use  strict';
     var tab, i, j, th, func = {}, cell, ri;
