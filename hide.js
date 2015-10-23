@@ -9,17 +9,13 @@ function hideShowCols(tabId) {
     tab = document.getElementById(tabId);
     ri = th.parentNode.rowIndex;
 
-    function show(cell) {
-        if (cell.hide) {
+    function show(cell) {       
             cell.innerHTML = cell.innerHTML.slice(5, -3);
-            cell.hide = !cell.hide;
-        }
+            cell.hide = !cell.hide;       
     }
-    function hide(cell) {
-        if (!cell.hide) {
+    function hide(cell) {     
             cell.innerHTML = '&#8203;<!--' + cell.innerHTML + '-->';
-            cell.hide = !cell.hide;
-        }
+            cell.hide = !cell.hide;       
     } 
     if (th.hide) {
         func = show;
