@@ -1,14 +1,12 @@
 function hideShowCols(tabId) {
     'use  strict';
-    var tab, i, j, th, func = {}, cell, ri ,first=true, startCol=0;
+    var tab, i, j, th, func = {}, cell ,first=true, startCol=0;
 
     th = (window.event.target) ? window.event.target : window.event.srcElement;
     if (th.tagName !== 'TH') {
         return;
     }
-    tab = document.getElementById(tabId);
-    ri = th.parentNode.rowIndex;
-
+    tab = document.getElementById(tabId); 
     function show(cell) {
         if (cell.hide) {
             cell.innerHTML = cell.innerHTML.slice(5, -3);
