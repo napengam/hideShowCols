@@ -7,7 +7,7 @@ Here is a simple solution to hide or show columns of a table
 with a click. 
 
 There are no dependencies to any other libraries,
-frameworks or CSS classe.  
+frameworks or CSS classes.  
 
 Logic
 =====
@@ -19,7 +19,7 @@ Whenever a click inside a <TH> element happens , all cells
 below and including the <TH> will be hidden.
 
 This is done by turning the innerHTML of ever cell below into
-a comment using.
+a comment but using a zero-width space in front of it.
 
-If you click again in a hidden cell, the content will be displayed
-again by uncommetning the content. 
+If you click again in a hidden TH cell, the content will be displayed
+again by uncommenting the content. 
